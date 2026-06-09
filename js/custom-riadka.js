@@ -4,7 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. STICKY HEADER
+    // 1. STICKY HEADER & MOBILE MENU
     const header = document.querySelector('.site-header');
     if (header) {
         window.addEventListener('scroll', () => {
@@ -13,6 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+    }
+
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
         });
     }
 

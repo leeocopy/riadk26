@@ -65,6 +65,11 @@ a:hover { color: var(--rk-primary-hover); }
 .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--rk-primary); transition: width var(--transition-fast); }
 .nav-links a:hover::after { width: 100%; }
 .header-actions { display: flex; align-items: center; }
+.mobile-menu-toggle { display: none; flex-direction: column; justify-content: center; gap: 6px; width: 40px; height: 40px; background: none; border: none; cursor: pointer; z-index: 110; padding: 0; }
+.mobile-menu-toggle span { display: block; width: 100%; height: 2px; background-color: var(--rk-white); transition: all 0.3s ease; }
+.mobile-menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
+.mobile-menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
 /* =========================================
    2. HERO SLIDER
@@ -260,9 +265,9 @@ a:hover { color: var(--rk-primary-hover); }
 ========================================= */
 @media (max-width: 992px) {
   .welcome-editorial { flex-direction: column; padding: 0 20px; }
-  .welcome-image { flex: 0 0 100%; width: 100%; }
-  .welcome-image img { height: 400px; }
-  .welcome-text-panel { flex: 0 0 100%; width: 95%; margin-left: 0; margin-top: -60px; padding: 40px 30px; }
+  .welcome-image { flex: none; width: 100%; }
+  .welcome-image img { height: 350px; }
+  .welcome-text-panel { flex: none; width: 100%; margin-left: 0; margin-top: 0; padding: 30px 25px; }
   .services-grid, .activities-grid, .reviews-container { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .hero-content h1 { font-size: 3.5rem; }
@@ -282,23 +287,68 @@ a:hover { color: var(--rk-primary-hover); }
 
 @media (max-width: 768px) {
   :root { --section-padding: var(--section-padding-mobile); }
-  .welcome-text-panel { width: 100%; margin-top: 0; padding: 30px 20px; }
+  .section-welcome { padding: 40px 0; }
+  .welcome-editorial { padding: 0 15px; }
+  .welcome-image img { height: 250px; }
+  .welcome-text-panel { flex: none; width: 100%; margin-left: 0; margin-top: 0; padding: 20px; }
+  .welcome-text-panel h2 { font-size: 1.4rem; margin-bottom: 1rem; }
+  .welcome-text-panel h2::after { margin: 1rem auto 0; }
+  .welcome-text-panel p { font-size: 0.95rem; line-height: 1.6; }
   .services-grid, .activities-grid, .reviews-container, .footer-grid { grid-template-columns: 1fr; }
   .header-container { padding: 0 20px; }
-  .nav-links { display: none; }
-  .hero-content h1 { font-size: 2.8rem; }
-  .hero-content p { font-size: 1.2rem; }
+  .hero-content h1 { font-size: 2.2rem; }
+  .hero-content p { font-size: 1.1rem; }
   .hero-buttons { flex-direction: column; gap: 15px; }
   .slider-arrow { display: none; }
   .room-slide { flex: 0 0 320px; }
   .room-image-wrapper { height: 240px; }
   .room-name-overlay { opacity: 1; padding: 30px 20px 15px; font-size: 1.2rem; }
+  /* Logo mobile */
+  .logo img { height: 60px; }
+  .site-header.scrolled .logo img { height: 50px; }
+  /* Mobile menu */
+  .mobile-menu-toggle { display: flex; }
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #262B16;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+  }
+  .main-nav.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .nav-links {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .nav-links a {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  .header-actions { display: none; }
   /* Restauration responsive */
-  .restauration-image { height: 350px; }
+  .restauration-image { height: 300px; }
   .restauration-content { padding: 40px 25px; }
-  .restauration-content h2 { font-size: 2rem; }
+  .restauration-content h2 { font-size: 1.8rem; }
   .restauration-content p { font-size: 0.95rem; }
   /* Reviews responsive */
-  .reviews-header-left h2 { font-size: 2.2rem; }
-  .review-card { flex: 0 0 300px; min-height: 320px; padding: 25px; }
+  .reviews-header-left h2 { font-size: 2rem; }
+  .review-card { flex: 0 0 280px; min-height: 300px; padding: 25px; }
+  /* Map responsive */
+  .map-wrapper iframe { height: 300px; }
+  /* Footer responsive */
+  .footer-col.brand img { height: 80px; }
+  .section-faq h2 { font-size: 2rem; }
 }
