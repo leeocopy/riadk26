@@ -463,10 +463,7 @@ a:hover { color: var(--ka-moka-167); }
 .hero-image-sticky {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 24px;
   overflow: hidden;
-  opacity: 0;
-  transition: opacity 1s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .hero-image-sticky.is-visible {
   opacity: 1;
@@ -474,15 +471,6 @@ a:hover { color: var(--ka-moka-167); }
 .hero-image-scale {
   width: 100%;
   overflow: hidden;
-  transform: scale(1);
-  will-change: transform;
-}
-.hero-image-scale img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  max-height: 560px;
 }
 
 /* =========================================
@@ -520,20 +508,8 @@ a:hover { color: var(--ka-moka-167); }
 }
 .welcome-image-centered {
   max-width: 900px;
-  margin: 50px auto 0;
-  padding: 0 24px;
+  margin: 0 auto;
   overflow: hidden;
-}
-.welcome-image-centered img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  max-height: 560px;
-  transition: transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-.welcome-image-centered:hover img {
-  transform: scale(1.03);
 }
 
 /* =========================================
@@ -1779,6 +1755,87 @@ a:hover { color: var(--ka-moka-167); }
         font-size: 1.5rem;
     }
 }
+
+/* Pure CSS Scroll Transition Styles (RiadXO inspired) */
+.hero-image-section img,
+.welcome-image-section img {
+  display: none !important;
+}
+
+.hero-image-section,
+.welcome-image-section {
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff;
+  padding: 0 !important;
+  text-align: center;
+}
+
+.hero-image-sticky {
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 65vh;
+  background-image: url('../img/hero-1.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.hero-image-sticky.is-visible {
+  opacity: 1 !important;
+}
+
+.welcome-image-centered {
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 65vh;
+  background-image: url('../PHOTOS_RIAD_KA/Coursive/P4162265.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.welcome-image-centered.is-visible {
+  opacity: 1 !important;
+}
+
+/* Neutralize animate-on-scroll translateY on fixed background containers */
+.welcome-image-centered.animate-on-scroll {
+  transform: none !important;
+}
+.hero-image-sticky.animate-on-scroll {
+  transform: none !important;
+}
+
+.section-welcome {
+  position: relative;
+  z-index: 5;
+  background: #ffffff !important;
+  padding: 90px 24px;
+  margin-top: -8vh;
+}
+
+.section-rooms {
+  position: relative;
+  z-index: 5;
+  background-color: #ffffff !important;
+  margin-top: -8vh;
+}
+
+@media (max-width: 1024px) {
+  .hero-image-sticky,
+  .welcome-image-centered {
+    background-attachment: scroll !important;
+    min-height: 40vh;
+  }
+}
+
 
 /* ALL BUTTONS OVERRIDE TO ORANGE PILL */
 .rk-btn, .rk-btn-small, .ka-btn, .room-card-btn, .contact-form-submit {

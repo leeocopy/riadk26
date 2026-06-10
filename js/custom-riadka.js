@@ -345,34 +345,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // 8. HERO IMAGE SCROLL ZOOM — Scale entire row 1.0 → 1.3 on scroll
-    const initHeroScrollZoom = () => {
-        const heroScale = document.querySelector('.hero-image-scale');
-        const heroSticky = document.querySelector('.hero-image-sticky');
-        if (!heroScale || !heroSticky) return;
-        
-        const handleScroll = () => {
-            const rect = heroSticky.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            
-            // Progress: 0 when sticky area enters viewport, 1 when fully scrolled
-            const progress = Math.max(0, Math.min(1, 
-                (windowHeight - rect.top) / (windowHeight + rect.height)
-            ));
-            
-            // Scale from 1.0 to 1.3
-            const scale = 1 + (progress * 0.3);
-            heroScale.style.transform = `scale(${scale})`;
-        };
-        
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        handleScroll();
-    };
-
     // Initialize all
     initSlider();
     initTypewriter();
-    initHeroScrollZoom();
     initScrollReveal();
     initFAQ();
     initRoomsSlider();
