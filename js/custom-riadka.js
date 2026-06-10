@@ -1,5 +1,6 @@
 /**
- * RIAD KA - CUSTOM HOMEPAGE SCRIPTS
+ * RIAD KA — RiadXO Style Scripts
+ * Scroll reveal, sliders, FAQ, drag navigation
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.site-header');
     if (header) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 60) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -68,28 +69,37 @@ document.addEventListener('DOMContentLoaded', () => {
         slideInterval = setInterval(nextSlide, intervalTime);
     };
 
-    // 3. SCROLL ANIMATIONS (Intersection Observer)
-    const initScrollAnimations = () => {
-        const elements = document.querySelectorAll('.animate-on-scroll');
-        
-        // Respect prefers-reduced-motion
+    // 3. SCROLL REVEAL — All sections (RiadXO style)
+    const initScrollReveal = () => {
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         
         if (!('IntersectionObserver' in window) || prefersReducedMotion) {
-            elements.forEach(el => el.classList.add('is-visible'));
+            document.querySelectorAll('.animate-on-scroll, .welcome-reveal, .ka-reveal, .ka-image-reveal').forEach(el => {
+                el.classList.add('is-visible');
+            });
             return;
         }
 
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -60px 0px',
+            threshold: 0.08
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
+        }, observerOptions);
 
-        elements.forEach(el => observer.observe(el));
+        // Observe all animated elements
+        const revealElements = document.querySelectorAll(
+            '.animate-on-scroll, .welcome-reveal, .ka-reveal, .ka-image-reveal'
+        );
+        revealElements.forEach(el => revealObserver.observe(el));
     };
 
     // 4. FAQ ACCORDION
@@ -132,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
             track.appendChild(clone);
         });
 
-        // Auto-scroll function
         let isDown = false;
         let startX;
         let scrollLeft;
@@ -140,32 +149,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const scrollStep = () => {
             if (!isDown) {
-                track.scrollLeft += 1; // Smooth 1px per frame (60fps)
-                // Reset when we reach exactly half of the total scroll width
+                track.scrollLeft += 1;
                 if (track.scrollLeft >= track.scrollWidth / 2) {
-                    track.scrollLeft -= track.scrollWidth / 2; // Seamless loop back
+                    track.scrollLeft -= track.scrollWidth / 2;
                 }
             }
             animationFrameId = requestAnimationFrame(scrollStep);
         };
 
         const startAutoScroll = () => {
-            // Respect prefers-reduced-motion
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            
-            // Cancel any existing frame request to prevent speed-up
             cancelAnimationFrame(animationFrameId);
             animationFrameId = requestAnimationFrame(scrollStep);
         };
 
         const stopAutoScroll = () => cancelAnimationFrame(animationFrameId);
 
-        // Mouse Events for Dragging
         track.addEventListener('mousedown', (e) => {
             isDown = true;
             stopAutoScroll();
             track.classList.add('active');
-            track.style.scrollBehavior = 'auto'; // Disable smooth scroll for instant drag
+            track.style.scrollBehavior = 'auto';
             startX = e.pageX - track.offsetLeft;
             scrollLeft = track.scrollLeft;
         });
@@ -190,11 +194,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - track.offsetLeft;
-            const walk = (x - startX) * 2; // Drag sensitivity
+            const walk = (x - startX) * 2;
             track.scrollLeft = scrollLeft - walk;
         });
         
-        // Touch events
         track.addEventListener('touchstart', stopAutoScroll, {passive: true});
         track.addEventListener('touchend', startAutoScroll);
 
@@ -208,31 +211,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const children = Array.from(track.children);
         
-        // Clone at the beginning (reverse order for seamless loop)
         [...children].reverse().forEach(child => {
             track.insertBefore(child.cloneNode(true), track.firstChild);
         });
         
-        // Clone at the end
         children.forEach(child => {
             track.appendChild(child.cloneNode(true));
         });
 
         const setWidth = track.scrollWidth / 3;
         
-        // Initial scroll to center the original set (middle set)
         track.scrollLeft = setWidth + (setWidth / 2) - (track.offsetWidth / 2);
 
         let isDown = false;
         let startX;
         let scrollLeft;
         let animationFrameId;
-        const speed = 1.2; // pixels per frame
+        const speed = 1.2;
 
         const scrollStep = () => {
             if (!isDown) {
                 track.scrollLeft += speed;
-                // Seamless loop: when reaching the end of the middle set, jump back to start of middle set
                 if (track.scrollLeft >= setWidth * 2) {
                     track.scrollLeft -= setWidth;
                 }
@@ -287,10 +286,96 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoScroll();
     };
 
+    // 7. TYPEWRITER EFFECT — Hero Title & Subtitle
+    const initTypewriter = () => {
+        const titleEl = document.querySelector('.typewriter-text');
+        const subtitleEl = document.querySelector('.typewriter-sub');
+        const cursorEl = document.querySelector('.typewriter-cursor');
+        const headerEl = document.querySelector('.hero-header');
+        const subtypeEl = document.querySelector('.hero-subtype');
+        const imageWrap = document.querySelector('.hero-image-sticky');
+        
+        if (!titleEl) return;
+        
+        const titleText = titleEl.getAttribute('data-text') || 'Riad KA';
+        const subText = subtitleEl ? subtitleEl.getAttribute('data-text') : '';
+        
+        // Fade in header container
+        setTimeout(() => {
+            if (headerEl) headerEl.classList.add('is-visible');
+        }, 300);
+        
+        // Type out title
+        setTimeout(() => {
+            let i = 0;
+            const typeInterval = setInterval(() => {
+                if (i < titleText.length) {
+                    titleEl.textContent += titleText.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typeInterval);
+                    // After title, show & type subtitle
+                    setTimeout(() => {
+                        if (subtypeEl) subtypeEl.classList.add('is-visible');
+                        if (subtitleEl && subText) {
+                            subtitleEl.textContent = '';
+                            let j = 0;
+                            const subInterval = setInterval(() => {
+                                if (j < subText.length) {
+                                    subtitleEl.textContent += subText.charAt(j);
+                                    j++;
+                                } else {
+                                    clearInterval(subInterval);
+                                    finishTyping();
+                                }
+                            }, 55);
+                        } else {
+                            finishTyping();
+                        }
+                    }, 250);
+                }
+            }, 130);
+        }, 600);
+        
+        function finishTyping() {
+            if (cursorEl) cursorEl.classList.add('typing-done');
+            setTimeout(() => {
+                if (imageWrap) imageWrap.classList.add('is-visible');
+            }, 300);
+        }
+    };
+
+    // 8. HERO IMAGE SCROLL ZOOM — Scale entire row 1.0 → 1.3 on scroll
+    const initHeroScrollZoom = () => {
+        const heroScale = document.querySelector('.hero-image-scale');
+        const heroSticky = document.querySelector('.hero-image-sticky');
+        if (!heroScale || !heroSticky) return;
+        
+        const handleScroll = () => {
+            const rect = heroSticky.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // Progress: 0 when sticky area enters viewport, 1 when fully scrolled
+            const progress = Math.max(0, Math.min(1, 
+                (windowHeight - rect.top) / (windowHeight + rect.height)
+            ));
+            
+            // Scale from 1.0 to 1.3
+            const scale = 1 + (progress * 0.3);
+            heroScale.style.transform = `scale(${scale})`;
+        };
+        
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+    };
+
     // Initialize all
     initSlider();
-    initScrollAnimations();
+    initTypewriter();
+    initHeroScrollZoom();
+    initScrollReveal();
     initFAQ();
     initRoomsSlider();
     initReviewsSlider();
 });
+

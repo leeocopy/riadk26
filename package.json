@@ -1,0 +1,12 @@
+{
+  "name": "kiadk26",
+  "version": "1.0.0",
+  "description": "Static website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

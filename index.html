@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Riad KA</title>
+    <title>Riad KA Marrakech — Maison d'hôtes de charme au cœur de la Médina</title>
+    <meta name="description" content="Riad KA, maison d'hôtes de charme à Marrakech. 8 chambres raffinées, cuisine authentique, spa & hammam, excursions sur mesure. Réservez votre séjour au cœur de la Médina.">
     
-    <!-- Google Fonts: Lato & Poppins -->
+    <!-- Google Fonts: Marcellus (headings) + Manrope (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom-riadka.css">
@@ -21,18 +22,21 @@
             <a href="#" class="logo">
                 <img src="img/logo-white.png" alt="Riad KA Marrakech">
             </a>
+            
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="#le-riad">Le Riad</a></li>
-                    <li><a href="#chambres">Chambres</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#activites">Activités</a></li>
-                    <li><a href="#restauration">Restauration</a></li>
-                    <li><a href="#bien-etre">Bien-être</a></li>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="chambres.html">Chambres</a></li>
+                    <li><a href="prestation.html">Prestation</a></li>
+                    <li><a href="restauration.html">Restauration</a></li>
+                    <li><a href="bien-etre.html">Bien-être</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <a href="#" class="rk-btn rk-btn-small">Réserver</a>
+                <a href="#contact" class="rk-btn rk-btn-small">Réserver</a>
             </div>
             <button class="mobile-menu-toggle" aria-label="Menu">
                 <span></span>
@@ -42,112 +46,109 @@
         </div>
     </header>
 
-    <!-- 2. HERO SLIDER -->
-    <section class="hero-slider">
-        <div class="slide active">
-            <img src="img/hero-1.png" alt="Riad KA Courtyard">
-        </div>
-        <div class="slide">
-            <img src="img/hero-2.png" alt="Riad KA Rooftop">
-        </div>
-        <div class="slide">
-            <img src="img/hero-3.png" alt="Riad KA Suite">
-        </div>
-
-        <div class="hero-overlay"></div>
-
-        <div class="hero-content">
-            <h1>Riad KA – L’âme de Marrakech</h1>
-            <p>Entre Tradition et Raffinement</p>
-            <div class="hero-buttons">
-                <a href="#" class="rk-btn">Réserver</a>
-                <a href="#chambres" class="rk-btn rk-btn-outline-white">Découvrir nos chambres</a>
+    <!-- 2. HERO — Text only -->
+    <section class="hero-new">
+        <div class="hero-header">
+            <h1><span class="typewriter-text" data-text="Riad KA"></span><span class="typewriter-cursor">|</span></h1>
+            <div class="hero-subtype">
+                <span class="line"></span>
+                <span class="typewriter-sub" data-text="Entre Tradition et Raffinement"></span>
+                <span class="line"></span>
             </div>
-        </div>
-
-        <div class="slider-arrow prev-arrow" aria-label="Précédent">&#10094;</div>
-        <div class="slider-arrow next-arrow" aria-label="Suivant">&#10095;</div>
-        
-        <div class="slider-nav">
-            <button class="dot active" aria-label="Slide 1"></button>
-            <button class="dot" aria-label="Slide 2"></button>
-            <button class="dot" aria-label="Slide 3"></button>
         </div>
     </section>
 
-    <!-- 3. WELCOME SECTION -->
-    <section id="le-riad" class="section-welcome">
-        <div class="welcome-editorial">
-            <div class="welcome-image animate-on-scroll">
-                <img src="PHOTOS_RIAD_KA/Riads/P4162644.jpg" alt="Riad à Marrakech">
+    <!-- 3. HERO IMAGE -->
+    <section class="hero-image-section">
+        <div class="hero-image-sticky">
+            <div class="hero-image-scale">
+                <img src="img/hero-1.png" alt="Riad KA Marrakech">
             </div>
-            <div class="welcome-text-panel animate-on-scroll delay-1">
+        </div>
+    </section>
+
+    <!-- 4. LE RIAD — Text only -->
+    <section id="le-riad" class="section-welcome">
+        <div class="container">
+            <div class="welcome-text-centered animate-on-scroll">
+                <span class="ka-section-label">Le Riad</span>
                 <h2>Bienvenue au Riad KA Marrakech, un lieu de partage et de sérénité</h2>
                 <p>Riad KA ouvre ses portes à Marrakech dans un cadre paisible et raffiné. Loin de l'agitation de la médina, notre établissement allie le charme traditionnel marocain au confort moderne. Profitez d'une atmosphère sereine tout en restant à proximité des lieux incontournables de la ville.</p>
             </div>
         </div>
     </section>
 
+    <!-- 5. WELCOME IMAGE -->
+    <section class="welcome-image-section">
+        <div class="container">
+            <div class="welcome-image-centered animate-on-scroll delay-1">
+                <img src="PHOTOS_RIAD_KA/Coursive/P4162265.jpg" alt="Coursive du Riad KA Marrakech">
+            </div>
+        </div>
+    </section>
+
     <!-- 4. NOS CHAMBRES -->
     <section id="chambres" class="section-rooms">
-        <div class="container text-center">
-            <h2 class="animate-on-scroll">Nos Chambres & Suites</h2>
-            <p class="section-subtitle animate-on-scroll delay-1" style="max-width: 800px; margin: 0 auto 40px; color: var(--rk-text-light);">L’élégance marocaine dans un hôtel riad à Marrakech<br><br>Chaque chambre du Riad KA Marrakech est décorée dans un style raffiné alliant artisanat traditionnel et design contemporain. Pour un séjour mémorable, nos hébergements offrent calme, confort et authenticité.</p>
-        </div>
-        <div class="rooms-slider-wrapper animate-on-scroll delay-2">
-            <div class="rooms-track" id="roomsTrack">
-                <div class="room-slide">
-                    <div class="room-image-wrapper">
-                        <img src="PHOTOS_RIAD_KA/Chambre BERBERE/optimized/p4162319-1.avif" alt="Chambre Berbère">
-                        <div class="room-name-overlay">Chambre Berbère</div>
+        <div class="container">
+            <div class="text-center">
+                <h2 class="animate-on-scroll">Nos Chambres & Suites</h2>
+                <p class="section-subtitle animate-on-scroll delay-1" style="max-width: 800px; margin: 0 auto 40px; color: var(--rk-text-light);">L'élégance marocaine dans un hôtel riad à Marrakech<br><br>Chaque chambre du Riad KA Marrakech est décorée dans un style raffiné alliant artisanat traditionnel et design contemporain. Pour un séjour mémorable, nos hébergements offrent calme, confort et authenticité.</p>
+            </div>
+            <div class="rooms-slider-wrapper animate-on-scroll delay-2">
+                <div class="rooms-track" id="roomsTrack">
+                    <div class="room-slide">
+                        <div class="room-image-wrapper">
+                            <img src="PHOTOS_RIAD_KA/Chambre BERBERE/optimized/p4162319-1.avif" alt="Chambre Berbère">
+                            <div class="room-name-overlay">Chambre Berbère</div>
+                        </div>
                     </div>
-                </div>
-                <div class="room-slide">
-                    <div class="room-image-wrapper">
-                        <img src="PHOTOS_RIAD_KA/Chambre ESSAOUIRA/optimized/p4162564-1.avif" alt="Chambre Essaouira">
-                        <div class="room-name-overlay">Chambre Essaouira</div>
+                    <div class="room-slide">
+                        <div class="room-image-wrapper">
+                            <img src="PHOTOS_RIAD_KA/Chambre ESSAOUIRA/optimized/p4162564-1.avif" alt="Chambre Essaouira">
+                            <div class="room-name-overlay">Chambre Essaouira</div>
+                        </div>
                     </div>
-                </div>
-                <div class="room-slide">
-                    <div class="room-image-wrapper">
-                        <img src="PHOTOS_RIAD_KA/Chambre FES/optimized/p4162216-1.avif" alt="Chambre Fès">
-                        <div class="room-name-overlay">Chambre Fès</div>
+                    <div class="room-slide">
+                        <div class="room-image-wrapper">
+                            <img src="PHOTOS_RIAD_KA/Chambre FES/optimized/p4162216-1.avif" alt="Chambre Fès">
+                            <div class="room-name-overlay">Chambre Fès</div>
+                        </div>
                     </div>
-                </div>
-                <div class="room-slide">
-                    <div class="room-image-wrapper">
-                        <img src="PHOTOS_RIAD_KA/Chambre MARRAKECH/optimized/p4162395_1.webp" alt="Chambre Marrakech">
-                        <div class="room-name-overlay">Chambre Marrakech</div>
+                    <div class="room-slide">
+                        <div class="room-image-wrapper">
+                            <img src="PHOTOS_RIAD_KA/Chambre MARRAKECH/optimized/p4162395_1.webp" alt="Chambre Marrakech">
+                            <div class="room-name-overlay">Chambre Marrakech</div>
+                        </div>
                     </div>
-                </div>
-                <div class="room-slide">
-                    <div class="room-image-wrapper">
-                        <img src="PHOTOS_RIAD_KA/Chambre MEKNES/optimized/p4162658-1.avif" alt="Chambre Meknès">
-                        <div class="room-name-overlay">Chambre Meknès</div>
+                    <div class="room-slide">
+                        <div class="room-image-wrapper">
+                            <img src="PHOTOS_RIAD_KA/Chambre MEKNES/optimized/p4162658-1.avif" alt="Chambre Meknès">
+                            <div class="room-name-overlay">Chambre Meknès</div>
+                        </div>
                     </div>
-                </div>
-                <div class="room-slide">
-                    <div class="room-image-wrapper">
-                        <img src="PHOTOS_RIAD_KA/Chambre OUARZAZATE/optimized/p4162449-1.avif" alt="Chambre Ouarzazate">
-                        <div class="room-name-overlay">Chambre Ouarzazate</div>
+                    <div class="room-slide">
+                        <div class="room-image-wrapper">
+                            <img src="PHOTOS_RIAD_KA/Chambre OUARZAZATE/optimized/p4162449-1.avif" alt="Chambre Ouarzazate">
+                            <div class="room-name-overlay">Chambre Ouarzazate</div>
+                        </div>
                     </div>
-                </div>
-                <div class="room-slide">
-                    <div class="room-image-wrapper">
-                        <img src="PHOTOS_RIAD_KA/Chambre OURIKA/optimized/p4162507-1.avif" alt="Chambre Ourika">
-                        <div class="room-name-overlay">Chambre Ourika</div>
+                    <div class="room-slide">
+                        <div class="room-image-wrapper">
+                            <img src="PHOTOS_RIAD_KA/Chambre OURIKA/optimized/p4162507-1.avif" alt="Chambre Ourika">
+                            <div class="room-name-overlay">Chambre Ourika</div>
+                        </div>
                     </div>
-                </div>
-                <div class="room-slide">
-                    <div class="room-image-wrapper">
-                        <img src="PHOTOS_RIAD_KA/Chambre VOLUBILIS/optimized/p4162519-1.avif" alt="Chambre Volubilis">
-                        <div class="room-name-overlay">Chambre Volubilis</div>
+                    <div class="room-slide">
+                        <div class="room-image-wrapper">
+                            <img src="PHOTOS_RIAD_KA/Chambre VOLUBILIS/optimized/p4162519-1.avif" alt="Chambre Volubilis">
+                            <div class="room-name-overlay">Chambre Volubilis</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container text-center animate-on-scroll delay-3">
-            <a href="#" class="rk-btn">Découvrir nos chambres</a>
+            <div class="text-center animate-on-scroll delay-3">
+                <a href="#" class="rk-btn">Découvrir nos chambres</a>
+            </div>
         </div>
     </section>
 
@@ -210,74 +211,73 @@
         </div>
     </section>
 
-    <!-- 6. ACTIVITÉS -->
+    <!-- 6. RESTAURATION -->
+    <section id="restauration" class="section-restauration">
+        <div class="container">
+            <div class="split-grid">
+                <div class="split-image animate-on-scroll">
+                    <img src="PHOTOS_RIAD_KA/Pdej/P4162703.jpg" alt="Petit-déjeuner au Riad KA Marrakech">
+                </div>
+                <div class="split-text animate-on-scroll delay-1">
+                    <span class="restauration-label">RESTAURATION & SAVEURS</span>
+                    <h2>Une cuisine<br>marocaine authentique</h2>
+                    <p>Éveillez vos sens avec notre cuisine marocaine authentique, préparée avec des ingrédients frais du marché. Savourez votre petit-déjeuner sur notre toit-terrasse ou dînez dans l'intimité du patio sous le ciel étoilé de Marrakech.</p>
+                    <p>Chaque repas au Riad KA est une invitation au voyage à travers les saveurs traditionnelles du Maroc, revisitées avec élégance.</p>
+                    <a href="#" class="rk-btn">Découvrir notre table</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. BIEN-ÊTRE -->
+    <section id="bien-etre" class="section-bienetre">
+        <div class="container">
+            <div class="split-grid split-grid--reverse">
+                <div class="split-text animate-on-scroll">
+                    <span class="restauration-label">BIEN-ÊTRE & DÉTENTE</span>
+                    <h2>Un havre de sérénité<br>à Marrakech</h2>
+                    <p>Offrez-vous une parenthèse de douceur dans notre espace dédié à la relaxation. Laissez-vous tenter par des rituels de beauté ancestraux, un massage relaxant ou une séance de hammam traditionnel.</p>
+                    <p>Le Riad KA vous invite à un voyage sensoriel au cœur des traditions bien-être marocaines, pour un moment de pur apaisement.</p>
+                    <a href="#" class="rk-btn">Découvrir nos soins</a>
+                </div>
+                <div class="split-image animate-on-scroll delay-1">
+                    <img src="PHOTOS_RIAD_KA/Details/P4162606.jpg" alt="Bien-être et Spa au Riad KA Marrakech">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. ACTIVITÉS — RiadXO Style -->
     <section id="activites" class="section-activities">
         <div class="container">
-            <h2 class="animate-on-scroll">Nos Activités</h2>
+            <div class="section-heading text-center animate-on-scroll">
+                <h2 class="text-uppercase">Activités</h2>
+            </div>
             <div class="activities-grid">
-                
-                <div class="activity-card animate-on-scroll delay-1">
-                    <img src="img/service-breakfast.png" alt="Cuisine">
-                    <div class="activity-overlay">
-                        <h3>Atelier de cuisine marocaine</h3>
-                        <p>Apprenez à préparer les grands classiques de la gastronomie.</p>
-                        <a href="#" class="rk-btn-text">Découvrir <span>&#8594;</span></a>
-                    </div>
+                <div class="activity-item animate-on-scroll delay-1">
+                    <h3>Survol en Montgolfière</h3>
+                    <p>Une expérience unique de survol de la ville de Marrakech et de la Palmeraie en montgolfière</p>
                 </div>
-
-                <div class="activity-card animate-on-scroll delay-2">
-                    <img src="img/hero-2.png" alt="Excursions">
-                    <div class="activity-overlay">
-                        <h3>Excursions & visites sur mesure</h3>
-                        <p>Sorties organisées pour explorer les merveilles locales.</p>
-                        <a href="#" class="rk-btn-text">Découvrir <span>&#8594;</span></a>
-                    </div>
+                <div class="activity-item animate-on-scroll delay-2">
+                    <h3>La Palmeraie en Sidecar Vintage</h3>
+                    <p>Une balade découverte de Marrakech et ses alentours en Side Car Vintage</p>
                 </div>
-
-                <div class="activity-card animate-on-scroll delay-3">
-                    <img src="img/service-transfer.png" alt="Location de voiture">
-                    <div class="activity-overlay">
-                        <h3>Location de voiture à Marrakech</h3>
-                        <p>Profitez d'une totale liberté de mouvement pendant votre séjour.</p>
-                        <a href="#" class="rk-btn-text">Découvrir <span>&#8594;</span></a>
-                    </div>
+                <div class="activity-item animate-on-scroll delay-3">
+                    <h3>Bivouac en désert</h3>
+                    <p>Découvrir les déserts du Maroc en bivouac d'une ou deux nuits. Une expérience inédite !</p>
                 </div>
-
-            </div>
-            <div class="text-center animate-on-scroll delay-2" style="margin-top: 50px;">
-                <a href="#" class="rk-btn">Voir plus</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. RESTAURATION -->
-    <section id="restauration" class="section-restauration">
-        <div class="restauration-split">
-            <div class="restauration-image animate-on-scroll">
-                <img src="PHOTOS_RIAD_KA/Pdej/P4162703.jpg" alt="Petit-déjeuner au Riad KA Marrakech">
-            </div>
-            <div class="restauration-content animate-on-scroll delay-1">
-                <span class="restauration-label">RESTAURATION & SAVEURS</span>
-                <h2>Une cuisine<br>marocaine authentique</h2>
-                <p>Éveillez vos sens avec notre cuisine marocaine authentique, préparée avec des ingrédients frais du marché. Savourez votre petit-déjeuner sur notre toit-terrasse ou dînez dans l'intimité du patio sous le ciel étoilé de Marrakech.</p>
-                <p>Chaque repas au Riad KA est une invitation au voyage à travers les saveurs traditionnelles du Maroc, revisitées avec élégance.</p>
-                <a href="#" class="rk-btn">Découvrir notre table</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. BIEN-ÊTRE -->
-    <section id="bien-etre" class="section-bienetre">
-        <div class="restauration-split">
-            <div class="restauration-content animate-on-scroll">
-                <span class="restauration-label">BIEN-ÊTRE & DÉTENTE</span>
-                <h2>Un havre de sérénité<br>à Marrakech</h2>
-                <p>Offrez-vous une parenthèse de douceur dans notre espace dédié à la relaxation. Laissez-vous tenter par des rituels de beauté ancestraux, un massage relaxant ou une séance de hammam traditionnel.</p>
-                <p>Le Riad KA vous invite à un voyage sensoriel au cœur des traditions bien-être marocaines, pour un moment de pur apaisement.</p>
-                <a href="#" class="rk-btn">Découvrir nos soins</a>
-            </div>
-            <div class="restauration-image animate-on-scroll delay-1">
-                <img src="PHOTOS_RIAD_KA/Details/P4162606.jpg" alt="Bien-être et Spa au Riad KA Marrakech">
+                <div class="activity-item animate-on-scroll delay-1">
+                    <h3>Sites culturels</h3>
+                    <p>Le riad est à 2mn à pieds des principaux musées & 10mn à pieds des sites les plus touristiques</p>
+                </div>
+                <div class="activity-item animate-on-scroll delay-2">
+                    <h3>Excursions</h3>
+                    <p>Nos excursions privées avec guides expérimentés pour découvrir la région &amp; culture de Marrakech</p>
+                </div>
+                <div class="activity-item animate-on-scroll delay-3">
+                    <h3>Visite guidée de Marrakech</h3>
+                    <p>Visite culturelle, visite gastronomique, visite des marchés, visite nocturne pour découvrir la ville rouge sous tous ses aspects</p>
+                </div>
             </div>
         </div>
     </section>
@@ -351,7 +351,30 @@
         </div>
     </section>
 
-    <!-- 11. LOCALISATION -->
+    <!-- 11. CONTACT — RiadXO Style -->
+    <section id="contact" class="section-contact animate-on-scroll">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-info animate-on-scroll delay-1">
+                <p>Derb Zaouia, Médina, 40000 Marrakech<br>
+                Tél Whatsapp: <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer">+212 600 00 00 00</a><br>
+                <a href="mailto:contact@riad-ka.com">contact@riad-ka.com</a></p>
+            </div>
+            <form class="contact-form animate-on-scroll delay-2" action="#" method="POST">
+                <div class="contact-form-row">
+                    <input type="text" name="prenom" placeholder="Prénom" required>
+                    <input type="tel" name="telephone" placeholder="Téléphone" required>
+                </div>
+                <div class="contact-form-row">
+                    <input type="email" name="email" placeholder="E-mail" required style="grid-column: 1 / -1;">
+                </div>
+                <textarea name="message" placeholder="Rédigez votre message ici..." required></textarea>
+                <button type="submit" class="contact-form-submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 12. LOCALISATION -->
     <section class="section-map animate-on-scroll">
         <div class="container">
             <h2>Notre Localisation</h2>
@@ -390,11 +413,12 @@
 
                 <div class="footer-col links">
                     <h4>Découvrir</h4>
+                    
                     <ul>
-                        <li><a href="#chambres">Chambres & Suites</a></li>
-                        <li><a href="#services">Nos Services</a></li>
-                        <li><a href="#restauration">Restauration</a></li>
-                        <li><a href="#bien-etre">Spa & Bien-être</a></li>
+                        <li><a href="chambres.html">Chambres & Suites</a></li>
+                        <li><a href="prestation.html">Nos Services</a></li>
+                        <li><a href="restauration.html">Restauration</a></li>
+                        <li><a href="bien-etre.html">Spa & Bien-être</a></li>
                     </ul>
                 </div>
 
