@@ -1033,18 +1033,15 @@ a:hover { color: var(--ka-moka-167); }
   margin-bottom: 20px;
 }
 .contact-form-submit {
-  font-family: var(--ka-font-heading);
-  font-size: 1.15rem;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--ka-text-main);
-  background: none;
-  border: none;
+  font-family: var(--ka-font-body);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 12px 35px;
   cursor: pointer;
-  transition: color 0.3s ease;
-}
-.contact-form-submit:hover {
-  color: var(--ka-terracotta-493);
+  display: inline-block;
+  transition: all 0.4s ease;
 }
 
 /* =========================================

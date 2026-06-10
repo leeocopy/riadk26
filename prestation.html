@@ -32,7 +32,7 @@
                     <li><a href="bien-etre.html">Bien-être</a></li>
                     <li><a href="a-propos.html">À propos</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
@@ -174,6 +174,29 @@
             </div>
         </div>
     </section>
+    <!-- 11. CONTACT — RiadXO Style -->
+    <section id="contact" class="section-contact animate-on-scroll">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-info animate-on-scroll delay-1">
+                <p>Derb Zaouia, Médina, 40000 Marrakech<br>
+                Tél Whatsapp: <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer">+212 600 00 00 00</a><br>
+                <a href="mailto:contact@riad-ka.com">contact@riad-ka.com</a></p>
+            </div>
+            <form class="contact-form animate-on-scroll delay-2" action="#" method="POST">
+                <div class="contact-form-row">
+                    <input type="text" name="prenom" placeholder="Prénom" required>
+                    <input type="tel" name="telephone" placeholder="Téléphone" required>
+                </div>
+                <div class="contact-form-row">
+                    <input type="email" name="email" placeholder="E-mail" required style="grid-column: 1 / -1;">
+                </div>
+                <textarea name="message" placeholder="Rédigez votre message ici..." required></textarea>
+                <button type="submit" class="contact-form-submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
 <!-- 12. FOOTER -->
     <footer class="site-footer">
         <div class="container">
@@ -217,6 +240,10 @@
             </div>
         </div>
     </footer>
+
+    <!-- GSAP + ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!-- Custom JS -->
     <script src="js/custom-riadka.js"></script>
