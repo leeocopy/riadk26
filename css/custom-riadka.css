@@ -306,9 +306,9 @@ a:hover { color: var(--ka-moka-167); }
   padding: 10px 0;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.18);
 }
-.site-header .nav-links a { color: #2A1A12; }
-.site-header .nav-links a:hover { color: rgba(42, 26, 18, 0.75); }
-.site-header .nav-links a::after { background-color: #2A1A12; }
+.site-header .nav-links a { color: #ffffff; }
+.site-header .nav-links a:hover { color: rgba(255, 255, 255, 0.75); }
+.site-header .nav-links a::after { background-color: #ffffff; }
 .site-header .logo img { filter: none; }
 .site-header .rk-btn-small {
   background-color: #000000 !important;
@@ -326,9 +326,9 @@ a:hover { color: var(--ka-moka-167); }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 5vw;
+  padding: 0;
 }
 .logo img {
   height: 75px;
@@ -346,11 +346,11 @@ a:hover { color: var(--ka-moka-167); }
 .nav-links a {
   color: var(--ka-white);
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.14em;
   position: relative;
-  font-family: var(--ka-font-body);
+  font-family: var(--ka-font-heading);
   transition: color 0.3s ease;
 }
 .nav-links a::after {
@@ -418,15 +418,20 @@ a:hover { color: var(--ka-moka-167); }
   letter-spacing: 0.06em;
   line-height: 1.05;
   min-height: 1.15em;
+  display: inline-block;
+  position: relative;
+  padding-left: 0.06em;
 }
 .typewriter-text {
   display: inline;
 }
 .typewriter-cursor {
-  display: inline;
+  display: inline-block;
   font-weight: 300;
   color: var(--ka-text-main);
   animation: cursorBlink 0.8s step-end infinite;
+  position: absolute;
+  right: -0.4em;
 }
 .typewriter-cursor.typing-done {
   animation: none;
@@ -461,7 +466,7 @@ a:hover { color: var(--ka-moka-167); }
   background-color: var(--ka-border-soft);
 }
 .hero-image-sticky {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -482,7 +487,7 @@ a:hover { color: var(--ka-moka-167); }
   text-align: center;
 }
 .welcome-text-centered {
-  max-width: 720px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .welcome-text-centered .ka-section-label {
@@ -507,7 +512,7 @@ a:hover { color: var(--ka-moka-167); }
   font-weight: 300;
 }
 .welcome-image-centered {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -652,7 +657,7 @@ a:hover { color: var(--ka-moka-167); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 55px 50px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
@@ -898,7 +903,7 @@ a:hover { color: var(--ka-moka-167); }
   line-height: 1.1;
 }
 .section-faq h2::after { display: none; }
-.faq-accordion { max-width: 900px; margin: 0 auto; }
+.faq-accordion { max-width: 1200px; margin: 0 auto; }
 .faq-item { border-top: 1px solid var(--ka-border-soft); }
 .faq-item:last-child { border-bottom: 1px solid var(--ka-border-soft); }
 .faq-question {
@@ -971,10 +976,7 @@ a:hover { color: var(--ka-moka-167); }
 .contact-info a:hover {
   color: var(--ka-terracotta-493);
 }
-.contact-form {
-  max-width: 700px;
-  margin: 0 auto;
-}
+.contact-form { max-width: 1200px; margin: 0 auto; }
 .contact-form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1772,7 +1774,7 @@ a:hover { color: var(--ka-moka-167); }
 }
 
 .hero-image-sticky {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   min-height: 65vh;
   background-image: url('../img/hero-1.png');
@@ -1789,13 +1791,22 @@ a:hover { color: var(--ka-moka-167); }
 }
 
 .welcome-image-centered {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   min-height: 65vh;
   background-image: url('../PHOTOS_RIAD_KA/Coursive/P4162265.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.restaurant-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.welcome-image-centered {
   background-attachment: fixed;
   opacity: 0;
   transition: opacity 1s cubic-bezier(0.22, 0.61, 0.36, 1);
