@@ -286,63 +286,10 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoScroll();
     };
 
-    // 7. TYPEWRITER EFFECT — Hero Title & Subtitle
+    // 7. HERO IMAGE REVEAL — Text is static, image keeps its fade-in
     const initTypewriter = () => {
-        const titleEl = document.querySelector('.typewriter-text');
-        const subtitleEl = document.querySelector('.typewriter-sub');
-        const cursorEl = document.querySelector('.typewriter-cursor');
-        const headerEl = document.querySelector('.hero-header');
-        const subtypeEl = document.querySelector('.hero-subtype');
         const imageWrap = document.querySelector('.hero-image-sticky');
-        
-        if (!titleEl) return;
-        
-        const titleText = titleEl.getAttribute('data-text') || 'Riad KA';
-        const subText = subtitleEl ? subtitleEl.getAttribute('data-text') : '';
-        
-        // Fade in header container
-        setTimeout(() => {
-            if (headerEl) headerEl.classList.add('is-visible');
-        }, 300);
-        
-        // Type out title
-        setTimeout(() => {
-            let i = 0;
-            const typeInterval = setInterval(() => {
-                if (i < titleText.length) {
-                    titleEl.textContent += titleText.charAt(i);
-                    i++;
-                } else {
-                    clearInterval(typeInterval);
-                    // After title, show & type subtitle
-                    setTimeout(() => {
-                        if (subtypeEl) subtypeEl.classList.add('is-visible');
-                        if (subtitleEl && subText) {
-                            subtitleEl.textContent = '';
-                            let j = 0;
-                            const subInterval = setInterval(() => {
-                                if (j < subText.length) {
-                                    subtitleEl.textContent += subText.charAt(j);
-                                    j++;
-                                } else {
-                                    clearInterval(subInterval);
-                                    finishTyping();
-                                }
-                            }, 55);
-                        } else {
-                            finishTyping();
-                        }
-                    }, 250);
-                }
-            }, 130);
-        }, 600);
-        
-        function finishTyping() {
-            if (cursorEl) cursorEl.classList.add('typing-done');
-            setTimeout(() => {
-                if (imageWrap) imageWrap.classList.add('is-visible');
-            }, 300);
-        }
+        if (imageWrap) imageWrap.classList.add('is-visible');
     };
 
     // Initialize all
