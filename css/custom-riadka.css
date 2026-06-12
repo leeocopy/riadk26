@@ -1087,6 +1087,137 @@ a:hover { color: var(--ka-moka-167); }
 }
 
 /* =========================================
+   EXAMPLE FOOTER — Homepage (image reference)
+========================================= */
+.new-footer {
+  background-color: #c17a7e;
+  color: #ffffff;
+  padding: 90px 0 35px;
+}
+.new-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 70px;
+}
+.new-footer-lead {
+  font-family: var(--ka-font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+.new-footer-sub {
+  color: rgba(255,255,255,0.55);
+  font-weight: 300;
+  margin-bottom: 28px;
+  font-size: 1rem;
+}
+.new-footer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.new-footer-btn:hover {
+  background-color: #2A1A12;
+  border-color: #2A1A12;
+  color: #ffffff;
+}
+.new-footer-btn span {
+  transition: transform 0.3s ease;
+}
+.new-footer-btn:hover span {
+  transform: translate(3px, -3px);
+}
+.new-footer-nav h4,
+.new-footer-connect h4 {
+  font-family: var(--ka-font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 22px;
+}
+.new-footer-nav ul {
+  list-style: none;
+}
+.new-footer-nav li {
+  margin-bottom: 10px;
+}
+.new-footer-nav a,
+.new-footer-connect a {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.95rem;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+.new-footer-nav a:hover,
+.new-footer-connect a:hover {
+  color: var(--ka-orange-021);
+}
+.new-footer-connect p {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  font-weight: 300;
+}
+.new-footer-socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 22px;
+}
+.new-footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  color: #ffffff;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.new-footer-socials a:hover {
+  background-color: #2A1A12;
+  border-color: #2A1A12;
+}
+.new-footer-socials svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+.new-footer-bottom {
+  text-align: left;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.35);
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .new-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    margin-bottom: 50px;
+  }
+  .new-footer-bottom {
+    text-align: center;
+  }
+}
+
+/* =========================================
    ANIMATIONS & UTILS
 ========================================= */
 @keyframes kaFadeUp {
