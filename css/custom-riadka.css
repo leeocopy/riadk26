@@ -1163,7 +1163,7 @@ a:hover { color: var(--ka-moka-167); }
 }
 .new-footer-nav a:hover,
 .new-footer-connect a:hover {
-  color: var(--ka-orange-021);
+  color: #2A1A12;
 }
 .new-footer-connect p {
   color: rgba(255,255,255,0.55);
